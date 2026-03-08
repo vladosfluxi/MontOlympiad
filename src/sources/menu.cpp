@@ -34,12 +34,15 @@ char input_choice() {
 void handle_user_choice(char choice) {
   switch (choice) {
   case '1':
+
     break;
 
   case '2':
+
     break;
 
   case '3':
+    show_lowest()
     break;
   case '4':
     std::cout << "Exiting program...\n";
