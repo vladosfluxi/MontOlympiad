@@ -1,4 +1,6 @@
 #include "../headers/menu.h"
+#include "../headers/stats.h"
+#include "../headers/test.h"
 #include <iostream>
 
 void show_menu() {
@@ -31,18 +33,22 @@ char input_choice() {
   }
 }
 
-void handle_user_choice(char choice) {
+void handle_user_choice(char choice, const json& stats, const json& questions) {
   switch (choice) {
   case '1':
 
     break;
 
   case '2':
-
+    run_test(questions);
     break;
 
   case '3':
-    show_lowest()
+    for (auto it = stats.begin(); it != stats.end(); ++it) {
+      show_lowest(stats, it.key());
+      show_highest(stats, it.key());
+      show_average(stats, it.key());
+    }
     break;
   case '4':
     std::cout << "Exiting program...\n";

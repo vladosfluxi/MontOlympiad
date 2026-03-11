@@ -5,11 +5,6 @@
       {"name": "Bob", "score": 42.0},
       {"name": "Charlie", "score": 91.2}
     ]
-  },
-  "History": {
-    "students": [
-      {"name": "Dave", "score": 77.0},
-      {"name": "Eve", "score": 88.5}
-    ]
   }
+  
 }

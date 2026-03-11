@@ -6,30 +6,29 @@
 
 int main(){
 
-  ifstream file("data/statistics.json");
-  
+  std::ifstream file("data/statistics.json");
+
   if(!file.is_open()){
     std::cerr << "Error: could not open a file";
     return 1;
   }
-  
+
   json statistics_json;
   file >> statistics_json;
-
   file.close();
-  
-  ifstream file_test("data/math-questions.json");
+
+  std::ifstream file_test("data/math-questions.json");
   if(!file_test.is_open()){
     std::cerr << "Error: could not open a file";
     return 1;
   }
 
   json math_test;
-
   file_test >> math_test;
+  file_test.close();
 
   show_menu();
-  handle_user_choice(input_choice());
+  handle_user_choice(input_choice(), statistics_json, math_test);
 }
 
 

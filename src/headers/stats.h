@@ -1,5 +1,6 @@
 #include <string>
 #include <fstream>
+#include <limits>
 #include "../external/nlohmann/json.hpp"
 using json = nlohmann::json;
 

@@ -26,16 +26,35 @@ void show_lowest(const json& data, const std::string& subject) {
 
 // <----- SHOW HIGHES IMPLEMENTATION
 void show_highest(const json& data, const std::string& subject) {
-    if (!data.contains(subject) || !data[subject].is_array()) return;
+    if (!data.contains(subject)) return;
 
+    auto& students = data[subject]["students"];
     double highest = std::numeric_limits<double>::lowest();
-    
-    for (const auto& student : data[subject]) {
-        double score = student.value("score", 0.0);
+    std::string bestStudentName = "None";
+
+    for (const auto& student : students) {
+        double score = student["score"].get<double>();
         if (score > highest) {
             highest = score;
+            bestStudentName = student["name"];
         }
     }
-    
-    std::cout << "Highest score in " << subject << ": " << highest << std::endl;
+
+    std::cout << "Highest in " << subject << ": " << bestStudentName
+              << " with " << highest << std::endl;
+}
+
+void show_average(const json& data, const std::string& subject) {
+    if (!data.contains(subject)) return;
+
+    auto& students = data[subject]["students"];
+    if (students.empty()) return;
+
+    double total = 0.0;
+    for (const auto& student : students) {
+        total += student["score"].get<double>();
+    }
+
+    std::cout << "Average in " << subject << ": "
+              << total / students.size() << std::endl;
 }
