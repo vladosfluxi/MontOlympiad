@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(g++ -std=c++17 -o olympiad main.cpp 2>&1)",
+      "Bash(echo \"3\n4\" | ./olympiad)",
+      "Bash(printf \"2\\\\n5\\\\n1\\\\n2\\\\n3\\\\n4\\\\n1\\\\n\" | ./olympiad 2>&1)"
+    ]
+  }
+}
