@@ -1,4 +1,5 @@
 #include "../headers/menu.h"
+#include "../headers/learn.h"
 #include "../headers/stats.h"
 #include "../headers/test.h"
 #include <iostream>
@@ -36,7 +37,7 @@ char input_choice() {
 void handle_user_choice(char choice, const json& stats, const json& questions) {
   switch (choice) {
   case '1':
-
+    show_learning_content();
     break;
 
   case '2':

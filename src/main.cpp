@@ -1,4 +1,5 @@
 #include "sources/auth.cpp"
+#include "sources/learn.cpp"
 #include "sources/menu.cpp"
 #include "sources/stats.cpp"
 #include "sources/test.cpp"
