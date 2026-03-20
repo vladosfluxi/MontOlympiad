@@ -4,7 +4,12 @@
 #include "../headers/test.h"
 #include <iostream>
 
+void clear_screen() {
+  std::cout << "\033[2J\033[H" << std::flush;
+}
+
 void show_menu() {
+  clear_screen();
   std::cout << "\n===== ELECTRONIC SCHOOL SYSTEM =====\n";
   std::cout << "1. Learning content\n";
   std::cout << "2. Generate & take a test\n";

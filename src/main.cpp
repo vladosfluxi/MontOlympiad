@@ -13,6 +13,7 @@ int main() {
 
   // --- STEP 1: AUTHENTICATION LOOP ---
   while (!authenticated) {
+    clear_screen();
     std::cout << "\n=== WELCOME TO THE MATH APP ===\n";
     std::cout << "1. Sign Up\n2. Log In\n3. Exit\nSelection: ";
     std::cin >> auth_choice;

@@ -1,4 +1,5 @@
 #include "../headers/learn.h"
+#include "../headers/menu.h"
 #include <iostream>
 
 static void pause() {
@@ -10,6 +11,7 @@ static void pause() {
 //  TOPIC 1: What is an inequality?
 // ─────────────────────────────────────────────
 static void topic_what_is() {
+    clear_screen();
     std::cout << "\n========== WHAT IS AN INEQUALITY? ==========\n";
     std::cout << R"(
 An inequality compares two expressions using one of these symbols:
@@ -34,6 +36,7 @@ Example:
 //  TOPIC 2: Golden rules
 // ─────────────────────────────────────────────
 static void topic_rules() {
+    clear_screen();
     std::cout << "\n========== GOLDEN RULES FOR INEQUALITIES ==========\n";
     std::cout << R"(
 RULE 1 – Add or subtract the same number on both sides
@@ -77,6 +80,7 @@ RULE 4 – Moving a term to the other side
 //  TOPIC 3: How to solve step by step
 // ─────────────────────────────────────────────
 static void topic_how_to_solve() {
+    clear_screen();
     std::cout << "\n========== HOW TO SOLVE AN INEQUALITY ==========\n";
     std::cout << R"(
 General steps (same as solving an equation, but watch the sign!):
@@ -132,6 +136,7 @@ EXAMPLE D  (not-equal)
 //  TOPIC 4: Number line & interval notation
 // ─────────────────────────────────────────────
 static void topic_number_line() {
+    clear_screen();
     std::cout << "\n========== NUMBER LINE & NOTATION ==========\n";
     std::cout << R"(
 On a number line:
@@ -162,6 +167,7 @@ Round bracket ( ) means the endpoint is NOT included.
 //  TOPIC 5: Fractions in inequalities
 // ─────────────────────────────────────────────
 static void topic_fractions() {
+    clear_screen();
     std::cout << "\n========== INEQUALITIES WITH FRACTIONS ==========\n";
     std::cout << R"(
 When an inequality contains fractions, multiply both sides by the
@@ -221,6 +227,7 @@ EXAMPLE C  (three fractions, trickier)
 //  TOPIC 6: Polynomial inequalities (sign chart)
 // ─────────────────────────────────────────────
 static void topic_polynomial() {
+    clear_screen();
     std::cout << "\n========== POLYNOMIAL INEQUALITIES ==========\n";
     std::cout << R"(
 When an inequality contains x^2, x^3, etc., you cannot just divide
@@ -301,6 +308,7 @@ EXAMPLE C  (quadratic <= 0, a different shape)
 // ─────────────────────────────────────────────
 void show_learning_content() {
     while (true) {
+        clear_screen();
         std::cout << "\n===== LEARNING CONTENT: INEQUALITIES =====\n";
         std::cout << "1. What is an inequality?\n";
         std::cout << "2. Golden rules (including the flip rule)\n";

@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <random>
 #include "../external/nlohmann/json.hpp"
+#include "../headers/menu.h"
 
 using json = nlohmann::json;
 
@@ -23,6 +24,7 @@ void display_question(const json& questions_data, int question_index) {
 }
 
 void run_test(const json& questions_data) {
+    clear_screen();
     const auto& questions = questions_data["questions"];
     int total = (int)questions.size();
 
@@ -53,7 +55,8 @@ void run_test(const json& questions_data) {
         int points = q["points"].get<int>();
         max_points += points;
 
-        std::cout << "\nQuestion " << qi + 1 << " of " << num_questions;
+        clear_screen();
+        std::cout << "Question " << qi + 1 << " of " << num_questions;
         display_question(questions_data, idx);
 
         int answer;
