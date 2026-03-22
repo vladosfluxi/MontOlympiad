@@ -17,5 +17,8 @@ void show_highest(const json& data, const std::string& subject);
 // <----- FUNTION THAT SHOWS AVERAGE SCORE
 void show_average(const json& data, const std::string& subject);
 
+// <----- FUNCTION THAT SAVES A TEST RESULT
+void save_result(const std::string& username, double score);
+
 
 #endif 

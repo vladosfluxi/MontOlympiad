@@ -44,6 +44,22 @@ void show_highest(const json& data, const std::string& subject) {
               << " with " << highest << std::endl;
 }
 
+void save_result(const std::string& username, double score) {
+    const std::string path = "data/statistics.json";
+    json data;
+
+    std::ifstream in(path);
+    if (in.is_open()) {
+        in >> data;
+        in.close();
+    }
+
+    data["Mathematics"]["students"].push_back({{"name", username}, {"score", score}});
+
+    std::ofstream out(path);
+    out << data.dump(2);
+}
+
 void show_average(const json& data, const std::string& subject) {
     if (!data.contains(subject)) return;
 

@@ -7,6 +7,6 @@ using json = nlohmann::json;
 #define TEST_H
 
 void display_question(const json& questions_data, int question_index);
-void run_test(const json& questions_data);
+double run_test(const json& questions_data);
 
 #endif

@@ -8,6 +8,11 @@ void clear_screen() {
   std::cout << "\033[2J\033[H" << std::flush;
 }
 
+void pause() {
+  std::cout << "\nPress Enter to continue...";
+  std::cin.ignore(1000, '\n');
+}
+
 void show_menu() {
   clear_screen();
   std::cout << "\n===== ELECTRONIC SCHOOL SYSTEM =====\n";
@@ -39,15 +44,17 @@ char input_choice() {
   }
 }
 
-void handle_user_choice(char choice, const json& stats, const json& questions) {
+void handle_user_choice(char choice, const json& stats, const json& questions, const std::string& username) {
   switch (choice) {
   case '1':
     show_learning_content();
     break;
 
-  case '2':
-    run_test(questions);
+  case '2': {
+    double score = run_test(questions);
+    save_result(username, score);
     break;
+  }
 
   case '3':
     for (auto it = stats.begin(); it != stats.end(); ++it) {
@@ -55,9 +62,7 @@ void handle_user_choice(char choice, const json& stats, const json& questions) {
       show_highest(stats, it.key());
       show_average(stats, it.key());
     }
-    break;
-  case '4':
-    std::cout << "Exiting program...\n";
+    pause();
     break;
 
   default:

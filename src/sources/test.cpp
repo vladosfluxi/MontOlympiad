@@ -23,7 +23,7 @@ void display_question(const json& questions_data, int question_index) {
     }
 }
 
-void run_test(const json& questions_data) {
+double run_test(const json& questions_data) {
     clear_screen();
     const auto& questions = questions_data["questions"];
     int total = (int)questions.size();
@@ -80,6 +80,7 @@ void run_test(const json& questions_data) {
             std::cout << "Wrong! Correct answer was: "
                       << q["options"][correct_idx].get<std::string>() << "\n";
         }
+        pause();
     }
 
     std::cout << "\n========== RESULTS ==========\n";
@@ -88,5 +89,7 @@ void run_test(const json& questions_data) {
     double pct = max_points > 0 ? 100.0 * earned_points / max_points : 0.0;
     std::cout << "Score:   " << pct << "%\n";
     std::cout << "==============================\n";
+    pause();
+    return pct;
 }
 

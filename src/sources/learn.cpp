@@ -2,11 +2,6 @@
 #include "../headers/menu.h"
 #include <iostream>
 
-static void pause() {
-    std::cout << "\nPress Enter to continue...";
-    std::cin.ignore(1000, '\n');
-}
-
 // ─────────────────────────────────────────────
 //  TOPIC 1: What is an inequality?
 // ─────────────────────────────────────────────

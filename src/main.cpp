@@ -28,12 +28,17 @@ int main() {
 
     if (auth_choice == 1) {
       create_user(username, password);
+      pause();
     } else if (auth_choice == 2) {
       if (login_user(username, password)) {
+        pause();
         authenticated = true;
+      } else {
+        pause();
       }
     } else {
       std::cout << "Invalid choice.\n";
+      pause();
     }
   }
 
@@ -59,8 +64,15 @@ int main() {
   file_test.close();
 
   // Start the actual app logic
-  show_menu();
-  handle_user_choice(input_choice(), statistics_json, math_test);
+  while (true) {
+    show_menu();
+    char choice = input_choice();
+    if (choice == '4') {
+      std::cout << "Exiting program...\n";
+      break;
+    }
+    handle_user_choice(choice, statistics_json, math_test, username);
+  }
 
   return 0;
 }

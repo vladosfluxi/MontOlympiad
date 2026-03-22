@@ -8,8 +8,9 @@ using json = nlohmann::json;
 #define MENU_H
 
 void clear_screen();
+void pause();
 void show_menu();
 char input_choice();
-void handle_user_choice(char choice, const json& stats, const json& questions);
+void handle_user_choice(char choice, const json& stats, const json& questions, const std::string& username);
 
 #endif
