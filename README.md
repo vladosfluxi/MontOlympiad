@@ -47,20 +47,26 @@ MontOlympiad is a command-line educational application built in C++17 that guide
   <tr>
     <td align="center">
       <a href="https://github.com/vladosfluxi">
-        <img src="https://github.com/vladosfluxi.png" width="100px" alt="vladosfluxi"/><br/>
-        <b>vladosfluxi</b>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/VIKosev24">
-        <img src="https://github.com/VIKosev24.png" width="100px" alt="VIKosev24"/><br/>
-        <b>VIKosev24</b>
+        <img src="assets/vladimir.png" width="100px" alt="NAME_1"/><br/>
+        <b>Vladimir Kosev</b>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/BGNuri24">
-        <img src="https://github.com/BGNuri24.png" width="100px" alt="BGNuri24"/><br/>
-        <b>BGNuri24</b>
+        <img src="assets/beray.png" width="100px" alt="NAME_2"/><br/>
+        <b>Beray Nuri</b>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/BSAndrikov24">
+        <img src="assets/bori.png" width="100px" alt="NAME_3"/><br/>
+        <b>Borislav Andrikov</b>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/VZGospodinov24">
+        <img src="assets/vasilen.png" width="100px" alt="NAME_4"/><br/>
+        <b>Vasilen Gospodinov</b>
       </a>
     </td>
   </tr>
@@ -91,14 +97,9 @@ cd MontOlympiad
 
 **2. Configure the build**
 ```bash
-cmake -B build
+cmake -S ./ -B build
 ```
 
-> On Windows with a specific generator you can use:
-> ```bash
-> cmake -B build -G "MinGW Makefiles"   # MinGW / g++
-> cmake -B build -G "Visual Studio 17 2022"  # MSVC
-> ```
 
 **3. Compile**
 ```bash
